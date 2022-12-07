@@ -177,11 +177,9 @@ export default function () {
 
     components: {
       toast: {
-        default: function (parameter) {
+        default: function ({ children }) {
           return (
-            <span className="badge-accent badge-outline badge">
-              {parameter}
-            </span>
+            <span className="badge-accent badge-outline badge">{children}</span>
           );
         },
       },
@@ -301,14 +299,12 @@ export default function () {
             </div>
 
             <div className="self-center">
-              {Fn.components.toast.default("(ง︡'-'︠)ง End page")}
+              <Fn.components.toast.default>{`(ง︡'-'︠)ง End page`}</Fn.components.toast.default>
             </div>
           </div>
         ) : (
           <div className="self-center">
-            {Fn.components.toast.default(
-              "(~˘▾˘)~ Please provide data text field"
-            )}
+            <Fn.components.toast.default>{`(~˘▾˘)~ Please provide data text field`}</Fn.components.toast.default>
           </div>
         )}
       </div>

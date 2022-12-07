@@ -12,9 +12,7 @@
 
 ```text
 📂README
- ┗ 📂images
- ┃ ┗ 📂screenshots
- ┃ ┃ ┗ 0.png
+ ┗ 0.png
 
 📂src
  ┣ 📂assets
