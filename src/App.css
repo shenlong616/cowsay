@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply selection:bg-primary selection:text-primary-content;
+  }
+
+  textarea {
+    @apply textarea-bordered textarea resize-none bg-base-200 hover:textarea-primary focus:shadow-lg focus:shadow-primary focus:textarea-primary;
+  }
+
+  select {
+    @apply select-bordered select select-sm hover:select-primary focus:shadow-lg focus:shadow-primary focus:select-primary;
+  }
+
+  button {
+    @apply btn hover:btn-primary;
+  }
+}
