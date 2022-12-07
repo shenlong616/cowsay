@@ -6,7 +6,7 @@
 
 ## To do
 
-- [ ] Find formula based on condition [`state2`](/src/App.jsx/#L241) >= [`lg:grid-cols-2`](/src/App.jsx/#L277)
+- [ ] Find formula based on condition [`state2`](/src/App.jsx/#L239) >= [`lg:grid-cols-2`](/src/App.jsx/#L275)
 
 ## Tree files
 
