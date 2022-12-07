@@ -2,7 +2,7 @@
 
 ## Screenshots
 
-![](./README/images/screenshots/0.png)
+![](./README/0.png)
 
 ## To do
 
