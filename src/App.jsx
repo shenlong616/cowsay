@@ -154,24 +154,10 @@ export default function () {
 
   const Fn = {
     handle: {
-      generate: {
-        fake: {
-          sentences: {
-            array: function (parameter) {
-              const array = [];
-
-              for (let index = 0; index < parameter; index++) {
-                array.push(new LoremIpsum().generateSentences(1));
-              }
-
-              return array;
-            },
-          },
+      state: {
+        2: function () {
+          setState2(window.innerWidth);
         },
-      },
-
-      setState2: function () {
-        setState2(window.innerWidth);
       },
     },
 
@@ -192,20 +178,23 @@ export default function () {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("resize", Fn.handle.setState2);
+    window.addEventListener("resize", Fn.handle.state[2]);
 
-    return () => window.removeEventListener("resize", Fn.handle.setState2);
+    return () => window.removeEventListener("resize", Fn.handle.state[2]);
   }, []);
 
   useEffect(() => {
     // https://mattboldt.github.io/typed.js/docs/
     new Typed(ref1.current, {
-      strings: Fn.handle.generate.fake.sentences.array(1e3),
+      strings: [""],
       typeSpeed: 30,
       backSpeed: 25,
       attr: "placeholder",
       loop: true,
       showCursor: false,
+      onComplete: function (self) {
+        self.strings[0] = new LoremIpsum().generateSentences(1);
+      },
     });
   }, []);
 
