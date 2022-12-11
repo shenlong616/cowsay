@@ -159,6 +159,14 @@ export default function () {
           setState2(window.innerWidth);
         },
       },
+
+      loremIpsum: {
+        generate: {
+          sentences: function () {
+            return new LoremIpsum().generateSentences(1);
+          },
+        },
+      },
     },
 
     components: {
@@ -186,14 +194,14 @@ export default function () {
   useEffect(() => {
     // https://mattboldt.github.io/typed.js/docs/
     new Typed(ref1.current, {
-      strings: [""],
+      strings: [Fn.handle.loremIpsum.generate.sentences()],
       typeSpeed: 30,
       backSpeed: 25,
       attr: "placeholder",
       loop: true,
       showCursor: false,
       onComplete: function (self) {
-        self.strings[0] = new LoremIpsum().generateSentences(1);
+        self.strings[0] = Fn.handle.loremIpsum.generate.sentences();
       },
     });
   }, []);
