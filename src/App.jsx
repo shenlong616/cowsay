@@ -303,7 +303,7 @@ export default function () {
 
       {/* https://stackoverflow.com/a/46254706/9629799 */}
       <HelmetProvider>
-        <Helmet prioritizeSeoTags>
+        <Helmet>
           <meta
             name="viewport"
             value="width=device-width, initial-scale=1.0, maximum-scale=1.0"
