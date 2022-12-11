@@ -9,7 +9,6 @@ import TextareaAutosize from "react-textarea-autosize";
 import clsx from "clsx";
 import { GoMarkGithub } from "react-icons/go";
 import { LoremIpsum } from "lorem-ipsum";
-import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export default function () {
   // https://github.com/saadeghi/daisyui/blob/742f2807155cf496345e0f0b6d26fc17856b763a/src/docs/src/lib/data.js#L16
@@ -200,116 +199,103 @@ export default function () {
   }, []);
 
   return (
-    <>
-      <div className="container mx-auto">
-        <div className={clsx("flex flex-col p-5", className.gap.default.y)}>
-          <nav className="flex flex-row">
-            <h1 className="grow self-center font-serif text-5xl font-semibold">
-              Cowsay
-            </h1>
-            <select data-choose-theme className="self-end">
-              {themes.map((element) => (
-                <option value={element.id} key={element.id}>
-                  {element.id ? element.name.toLowerCase() : element.name}
-                </option>
-              ))}
-            </select>
-          </nav>
+    <div className="container mx-auto">
+      <div className={clsx("flex flex-col p-5", className.gap.default.y)}>
+        <nav className="flex flex-row">
+          <h1 className="grow self-center font-serif text-5xl font-semibold">
+            Cowsay
+          </h1>
+          <select data-choose-theme className="self-end">
+            {themes.map((element) => (
+              <option value={element.id} key={element.id}>
+                {element.id ? element.name.toLowerCase() : element.name}
+              </option>
+            ))}
+          </select>
+        </nav>
 
-          <div className="indicator w-full">
-            {state1 ? (
-              <div className="indicator-bottom indicator-center indicator-item w-max">
-                <div className="btn-group">
-                  <button className="btn-xs" onClick={setToggle2}>
-                    {!toggle2 ? "Wrap" : "No wrap"}
-                  </button>
-                  <button className="btn-xs" onClick={setToggle1}>
-                    {!toggle1 ? "Say" : "Think"}
-                  </button>
-                  {/* ?? */}
-                  {state2 >= 1024 ? (
-                    <button className="btn-xs" onClick={setToggle3}>
-                      {toggle3 ? "1 column" : "2 columns"}
-                    </button>
-                  ) : undefined}
-                  <button
-                    className="btn-xs"
-                    onClick={() =>
-                      window.open(
-                        "https://github.com/shenlong616/cowsay",
-                        "_blank"
-                      )
-                    }
-                    title="GitHub"
-                  >
-                    <GoMarkGithub />
-                  </button>
-                </div>
-              </div>
-            ) : undefined}
-
-            <TextareaAutosize
-              className="w-full"
-              ref={ref1}
-              minRows={10}
-              onChange={(event) => {
-                startTransition(() => setState1(event.target.value));
-              }}
-              autoFocus
-            />
-          </div>
-
+        <div className="indicator w-full">
           {state1 ? (
-            <div className={clsx("flex flex-col", className.gap.default.y)}>
-              <div
-                className={clsx("grid grid-cols-1", className.gap.default.xy, {
-                  ["lg:grid-cols-2"]: toggle3,
-                })}
-              >
-                {corral.map((element, index) => (
-                  <div key={element.name} className="indicator w-full">
-                    <div className="indicator-center indicator-bottom indicator-item w-max">
-                      <span className="badge font-mono">{element.name}</span>
-                    </div>
-
-                    <textarea
-                      // https://stackoverflow.com/questions/57810378/how-to-create-dynamic-refs-in-functional-component-using-useref-hook
-                      ref={(ref) => (refs.current[index] = ref)}
-                      className="w-full overflow-hidden whitespace-pre font-mono leading-none hover:overflow-auto focus:overflow-auto" // ??
-                      value={moo(state1, {
-                        cow: element.name,
-                        wrap: toggle2,
-                        action: toggle1 ? "say" : "think",
-                      })}
-                      rows={20}
-                      onClick={() => refs.current[index].select()}
-                      readOnly
-                    />
-                  </div>
-                ))}
-              </div>
-
-              <div className="self-center">
-                <Fn.components.toast.default>{`(ง︡'-'︠)ง End page`}</Fn.components.toast.default>
+            <div className="indicator-bottom indicator-center indicator-item w-max">
+              <div className="btn-group">
+                <button className="btn-xs" onClick={setToggle2}>
+                  {!toggle2 ? "Wrap" : "No wrap"}
+                </button>
+                <button className="btn-xs" onClick={setToggle1}>
+                  {!toggle1 ? "Say" : "Think"}
+                </button>
+                {/* ?? */}
+                {state2 >= 1024 ? (
+                  <button className="btn-xs" onClick={setToggle3}>
+                    {toggle3 ? "1 column" : "2 columns"}
+                  </button>
+                ) : undefined}
+                <button
+                  className="btn-xs"
+                  onClick={() =>
+                    window.open(
+                      "https://github.com/shenlong616/cowsay",
+                      "_blank"
+                    )
+                  }
+                  title="GitHub"
+                >
+                  <GoMarkGithub />
+                </button>
               </div>
             </div>
-          ) : (
-            <div className="self-center">
-              <Fn.components.toast.default>{`(~˘▾˘)~ Please provide data text field`}</Fn.components.toast.default>
-            </div>
-          )}
-        </div>
-      </div>
+          ) : undefined}
 
-      {/* https://stackoverflow.com/a/46254706/9629799 */}
-      <HelmetProvider>
-        <Helmet>
-          <meta
-            name="viewport"
-            value="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+          <TextareaAutosize
+            className="w-full"
+            ref={ref1}
+            minRows={10}
+            onChange={(event) => {
+              startTransition(() => setState1(event.target.value));
+            }}
           />
-        </Helmet>
-      </HelmetProvider>
-    </>
+        </div>
+
+        {state1 ? (
+          <div className={clsx("flex flex-col", className.gap.default.y)}>
+            <div
+              className={clsx("grid grid-cols-1", className.gap.default.xy, {
+                ["lg:grid-cols-2"]: toggle3,
+              })}
+            >
+              {corral.map((element, index) => (
+                <div key={element.name} className="indicator w-full">
+                  <div className="indicator-center indicator-bottom indicator-item w-max">
+                    <span className="badge font-mono">{element.name}</span>
+                  </div>
+
+                  <textarea
+                    // https://stackoverflow.com/questions/57810378/how-to-create-dynamic-refs-in-functional-component-using-useref-hook
+                    ref={(ref) => (refs.current[index] = ref)}
+                    className="w-full overflow-hidden whitespace-pre font-mono leading-none hover:overflow-auto focus:overflow-auto" // ??
+                    value={moo(state1, {
+                      cow: element.name,
+                      wrap: toggle2,
+                      action: toggle1 ? "say" : "think",
+                    })}
+                    rows={20}
+                    onClick={() => refs.current[index].select()}
+                    readOnly
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div className="self-center">
+              <Fn.components.toast.default>{`(ง︡'-'︠)ง End page`}</Fn.components.toast.default>
+            </div>
+          </div>
+        ) : (
+          <div className="self-center">
+            <Fn.components.toast.default>{`(~˘▾˘)~ Please provide data text field`}</Fn.components.toast.default>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
