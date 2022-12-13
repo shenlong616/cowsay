@@ -16,6 +16,6 @@
   }
 
   button {
-    @apply btn hover:btn-primary;
+    @apply btn-secondary btn hover:btn-accent;
   }
 }

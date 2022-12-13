@@ -272,7 +272,9 @@ export default function () {
               {corral.map((element, index) => (
                 <div key={element.name} className="indicator w-full">
                   <div className="indicator-center indicator-bottom indicator-item w-max">
-                    <span className="badge font-mono">{element.name}</span>
+                    <span className="badge-secondary badge font-mono">
+                      {element.name}
+                    </span>
                   </div>
 
                   <textarea
