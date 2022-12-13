@@ -2,7 +2,7 @@
 
 ## Screenshots
 
-![](./README/0.png)
+![](./README/1.png)
 
 ## To do
 
@@ -12,7 +12,7 @@
 
 ```text
 📂README
- ┗ 0.png
+ ┗ 1.png
 
 📂src
  ┣ 📂assets
