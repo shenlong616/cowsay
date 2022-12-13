@@ -208,8 +208,11 @@ export default function () {
     <div className="container mx-auto">
       <div className={clsx("flex flex-col p-5", className.gap.default.y)}>
         <nav className="flex flex-row">
-          <h1 className="grow self-center font-serif text-5xl font-semibold">
-            Cowsay
+          <h1 className="grow self-center">
+            <span className="font-serif text-6xl font-extrabold text-primary">
+              cow
+            </span>
+            <span className="text-xl font-semibold tracking-tight">say</span>
           </h1>
           <select data-choose-theme className="self-end">
             {themes.map((element) => (
