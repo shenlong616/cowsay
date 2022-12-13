@@ -172,9 +172,7 @@ export default function () {
     components: {
       toast: {
         default: function ({ children }) {
-          return (
-            <span className="badge-accent badge-outline badge">{children}</span>
-          );
+          return <span className="badge-secondary badge">{children}</span>;
         },
       },
     },
@@ -295,7 +293,7 @@ export default function () {
             </div>
 
             <div className="self-center">
-              <Fn.components.toast.default>{`(ง︡'-'︠)ง End page`}</Fn.components.toast.default>
+              <Fn.components.toast.default>{`＞﹏＜ End page`}</Fn.components.toast.default>
             </div>
           </div>
         ) : (
