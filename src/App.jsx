@@ -150,7 +150,7 @@ export default function () {
 
   const refs = useRef([]);
 
-  const className = { gap: { default: { xy: "gap-10", y: "gap-y-10" } } };
+  const className = { gap: { xy: "gap-10" } };
 
   const Fn = {
     handle: {
@@ -206,7 +206,7 @@ export default function () {
 
   return (
     <div className="container mx-auto">
-      <div className={clsx("flex flex-col p-5", className.gap.default.y)}>
+      <div className={clsx("flex flex-col p-5", className.gap.xy)}>
         <nav className="flex flex-row">
           <h1 className="grow self-center">
             <span className="font-serif text-6xl font-extrabold text-primary">
@@ -266,9 +266,9 @@ export default function () {
         </div>
 
         {state1 ? (
-          <div className={clsx("flex flex-col", className.gap.default.y)}>
+          <div className={clsx("flex flex-col", className.gap.xy)}>
             <div
-              className={clsx("grid grid-cols-1", className.gap.default.xy, {
+              className={clsx("grid grid-cols-1", className.gap.xy, {
                 ["lg:grid-cols-2"]: toggle3,
               })}
             >
