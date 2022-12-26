@@ -222,7 +222,6 @@ export default function () {
             ))}
           </select>
         </nav>
-
         <div className="indicator w-full">
           {state1 ? (
             <div className="indicator-bottom indicator-center indicator-item w-max">
@@ -254,7 +253,6 @@ export default function () {
               </div>
             </div>
           ) : undefined}
-
           <TextareaAutosize
             className="w-full"
             ref={ref1}
@@ -264,7 +262,6 @@ export default function () {
             }}
           />
         </div>
-
         {state1 ? (
           <div className={clsx("flex flex-col", className.gap.xy)}>
             <div
@@ -279,7 +276,6 @@ export default function () {
                       {element.name}
                     </span>
                   </div>
-
                   <textarea
                     // https://stackoverflow.com/questions/57810378/how-to-create-dynamic-refs-in-functional-component-using-useref-hook
                     ref={(ref) => (refs.current[index] = ref)}
@@ -296,9 +292,8 @@ export default function () {
                 </div>
               ))}
             </div>
-
             <div className="self-center">
-              <Fn.components.toast.default>{`＞﹏＜ End page`}</Fn.components.toast.default>
+              <Fn.components.toast.default>{`ò_óˇ End page`}</Fn.components.toast.default>
             </div>
           </div>
         ) : (
