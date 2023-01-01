@@ -293,7 +293,7 @@ export default function () {
               ))}
             </div>
             <div className="self-center">
-              <Fn.components.toast.default>{`ò_óˇ End page`}</Fn.components.toast.default>
+              <Fn.components.toast.default>{`(^-^*) No more cows`}</Fn.components.toast.default>
             </div>
           </div>
         ) : (
