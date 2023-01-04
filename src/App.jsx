@@ -137,19 +137,12 @@ export default function () {
   });
 
   const [state1, setState1] = useState();
-
   const [state2, setState2] = useState(window.innerWidth);
-
   const [toggle1, setToggle1] = useToggle(true);
-
   const [toggle2, setToggle2] = useToggle(false);
-
   const [toggle3, setToggle3] = useToggle(true);
-
   const ref1 = useRef();
-
   const refs = useRef([]);
-
   const className = { gap: { xy: "gap-10" } };
 
   const Fn = {
@@ -159,7 +152,6 @@ export default function () {
           setState2(window.innerWidth);
         },
       },
-
       loremIpsum: {
         generate: {
           sentences: function () {
@@ -168,7 +160,6 @@ export default function () {
         },
       },
     },
-
     components: {
       toast: {
         default: function ({ children }) {
