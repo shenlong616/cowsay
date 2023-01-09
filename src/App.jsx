@@ -161,10 +161,8 @@ export default function () {
       },
     },
     components: {
-      toast: {
-        default: function ({ children }) {
-          return <span className="badge-secondary badge">{children}</span>;
-        },
+      toast: function ({ children }) {
+        return <span className="badge-secondary badge">{children}</span>;
       },
     },
   };
@@ -196,7 +194,7 @@ export default function () {
   }, []);
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto touch-none">
       <div className={clsx("flex flex-col p-5", className.gap.xy)}>
         <nav className="flex flex-row">
           <h1 className="grow self-center">
@@ -284,12 +282,12 @@ export default function () {
               ))}
             </div>
             <div className="self-center">
-              <Fn.components.toast.default>{`(^-^*) No more cows`}</Fn.components.toast.default>
+              <Fn.components.toast>{`(^-^*) No more cows`}</Fn.components.toast>
             </div>
           </div>
         ) : (
           <div className="self-center">
-            <Fn.components.toast.default>{`(~˘▾˘)~ Please provide data text field`}</Fn.components.toast.default>
+            <Fn.components.toast>{`(~˘▾˘)~ Please provide data text field`}</Fn.components.toast>
           </div>
         )}
       </div>
