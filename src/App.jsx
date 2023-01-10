@@ -194,7 +194,7 @@ export default function () {
   }, []);
 
   return (
-    <div className="container mx-auto touch-none">
+    <div className="container mx-auto">
       <div className={clsx("flex flex-col p-5", className.gap.xy)}>
         <nav className="flex flex-row">
           <h1 className="grow self-center">
