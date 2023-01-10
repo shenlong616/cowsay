@@ -159,10 +159,10 @@ export default function () {
           },
         },
       },
-    },
-    components: {
-      toast: function ({ children }) {
-        return <span className="badge-secondary badge">{children}</span>;
+      components: {
+        toast: function ({ children }) {
+          return <span className="badge-secondary badge">{children}</span>;
+        },
       },
     },
   };
@@ -282,12 +282,12 @@ export default function () {
               ))}
             </div>
             <div className="self-center">
-              <Fn.components.toast>{`(^-^*) No more cows`}</Fn.components.toast>
+              <Fn.handle.components.toast>{`(^-^*) No more cows`}</Fn.handle.components.toast>
             </div>
           </div>
         ) : (
           <div className="self-center">
-            <Fn.components.toast>{`(~˘▾˘)~ Please provide data text field`}</Fn.components.toast>
+            <Fn.handle.components.toast>{`(~˘▾˘)~ Please provide data text field`}</Fn.handle.components.toast>
           </div>
         )}
       </div>
